@@ -1,0 +1,8 @@
+﻿Enterprise RAG Knowledge Platform
+
+RAG stands for Retrieval-Augmented Generation.
+RAG systems retrieve relevant information from documents
+and use that information to generate grounded answers.
+
+LangChain helps developers build applications powered by language models.
+Document loading is the first step in a typical RAG pipeline.

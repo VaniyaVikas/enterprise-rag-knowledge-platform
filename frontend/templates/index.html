@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101827">
+    <title>Knowledge AI | Enterprise RAG</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-icon">K</div>
+                <div>
+                    <h2>Knowledge AI</h2>
+                    <p>Enterprise RAG Platform</p>
+                </div>
+            </div>
+
+            <button class="new-chat" id="newChat">+ New conversation</button>
+
+            <div class="sidebar-section">
+                <span class="section-label">YOUR WORKSPACE</span>
+                <div class="nav-item active">✦ &nbsp; AI Assistant</div>
+                <div class="nav-item">▤ &nbsp; Knowledge Search</div>
+            </div>
+
+            <div class="sidebar-bottom">
+                <span class="status-dot"></span>
+                <span id="connectionStatus">Checking API connection...</span>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <div>
+                    <span class="eyebrow">YOUR KNOWLEDGE, CONNECTED</span>
+                    <h1>AI Knowledge Assistant</h1>
+                </div>
+                <div class="online-badge">
+                    <span class="status-dot"></span> RAG workspace
+                </div>
+            </header>
+
+            <section class="chat-area" id="chatArea">
+                <div class="welcome" id="welcome">
+                    <div class="welcome-icon">✧</div>
+                    <h2>What would you like to know?</h2>
+                    <p>Ask a question about your knowledge base. I'll retrieve relevant information and generate an answer.</p>
+
+                    <div class="suggestions">
+                        <button class="suggestion" data-query="What does RAG stand for?">
+                            <span>↗</span>
+                            <strong>What does RAG stand for?</strong>
+                            <small>Explore RAG fundamentals</small>
+                        </button>
+                        <button class="suggestion" data-query="How does retrieval-augmented generation work?">
+                            <span>⌘</span>
+                            <strong>How does RAG work?</strong>
+                            <small>Understand the workflow</small>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <div class="composer-wrap">
+                <form id="chatForm" class="composer">
+                    <textarea id="queryInput" rows="1"
+                        placeholder="Ask anything about your knowledge base..."
+                        aria-label="Your question"></textarea>
+                    <div class="composer-footer">
+                        <span>Answers are generated using your RAG pipeline.</span>
+                        <button type="submit" id="sendButton">
+                            <span id="sendLabel">Ask AI</span> &nbsp; ↑
+                        </button>
+                    </div>
+                </form>
+                <p class="disclaimer">AI-generated responses can be inaccurate. Verify important information against the sources.</p>
+            </div>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</body>
+</html>

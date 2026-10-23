@@ -1,0 +1,4 @@
+
+chunking:
+  chunk_size: 100
+  overlap: 20
